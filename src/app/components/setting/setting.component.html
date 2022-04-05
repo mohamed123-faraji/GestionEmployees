@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h1><i class="fa-solid fa-gears"></i>Setting</h1>
+    </div>
+    <div class="col-sm-6"><a href="#" routerLink="/" class="btn btn-primary">Back To dashboard <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a></div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <form #fo="ngForm" (submit)="mysbmit(fo)">
+        <div class="radio">
+            <label><input type="checkbox" [(ngModel)]="setting.isregisterOpen"  (change)="setting.isregisterOpen!=setting.isregisterOpen" name="isregisterOpen" [checked]="setting.isregisterOpen">Open Register</label>
+          </div>
+          <div class="radio">
+            <label>
+                <input type="checkbox" [(ngModel)]="setting.disableedsalar" (change)="setting.disableedsalar!=setting.disableedsalar" name="isregisterOpen" [checked]="setting.disableedsalar" >Enable Salary</label>
+          </div>
+          <div class="radio disabled">
+            <label><input type="checkbox" [(ngModel)]="setting.isSalaryEditable" (change)="setting.isSalaryEditable!=setting.isSalaryEditable" name="isSalaryEditable" [checked]="setting.isSalaryEditable">Edit Salary</label>
+          </div>
+         <div> <button type="submit" class="btn btn-primary">Save</button></div>
+        </form>
+    </div>
+    
+
+</div>
+

@@ -1,0 +1,67 @@
+<div class="container">
+<div class="row">
+    <div class="col-sm-9">
+      <h3 [class.text-danger]="issalary" [class.text-primary]="!issalary"> Total Salary : {{employee.salair | currency:"DH":true}}
+      <a   (click)="showupdatesalary=!showupdatesalary"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h3>
+      
+      <form *ngIf="showupdatesalary" (submit)="updataesalaryinput(id)">
+        <div class="form-group">
+          <label for="salary">New salair:</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.salair" placeholder="Enter salary" name="salary" id="salary">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+    <div class="col-sm-3"><a href="#" routerLink="/" class="btn btn-primary">Back To dashboard <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a></div>
+   
+</div>
+
+<hr>
+
+    <div class="row">
+  
+        <div class="col-sm-12">
+      <!-- </div> -->
+      <!-- <button href="#" (click)="delete()" class="btn btn-danger">Delete <i class="fa  fa-info"> </i></button> -->
+      <!-- </div> -->
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">LastName</th>
+          <th scope="col">Email</th>
+          <th scope="col">Country</th>
+          <th scope="col">City</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Salair</th>
+          <th scope="col">Edit</th>
+          <th scope="col">delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">{{id}}</th>
+          <th scope="col">{{employee.firstName}}</th>
+          <th scope="col">{{employee.lastName}}</th>
+          <th scope="col">{{employee.email}}</th>
+          <th scope="col">{{employee.country}}</th>
+          <th scope="col">{{employee.city}}</th>
+          <th scope="col">{{employee.phone}}</th>
+          <th scope="col">{{employee.salair}}</th>
+          <th scope="col"><a href="#" [routerLink]="['/edit-employee/'+id]" class="btn btn-primary">Edit <i class="fa fa-edit"></i></a>
+          </th>
+          <th scope="col" ><button href="#" (click)="delete(id)" class="btn btn-danger">Delete <i class="fa fa-user-times"></i></button>
+          </th>
+          <th></th>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+ 
+
+  
+  

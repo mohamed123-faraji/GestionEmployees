@@ -1,0 +1,35 @@
+<div *ngIf="Allemp.length>0; else elseblock">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3><i class="fa fa-users" aria-hidden="true"></i> Total : {{totalemp}}</h3>
+    </div>
+    <div class="col-sm-6">
+      <h3><i class="fa fa-money"></i> Total Salary : {{totalsalarysum | currency:"DH":true}}</h3>
+    </div>
+    <div class="col-sm-2"><app-sidbar></app-sidbar></div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+       
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Salair</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Allemp">
+        
+        <th scope="col">{{item.data.firstName}}</th>
+        <th scope="col">{{item.data.lastName}}</th>
+        <th scope="col">{{item.data.salair}}</th>
+        <th ><a href="#" [routerLink]="['employee/'+item.key]" class="btn btn-primary">more <i class="fa  fa-info"> </i></a></th>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<ng-template #elseblock><h2>OOPs aucun user!</h2></ng-template>
+
+
